@@ -61,6 +61,11 @@ pip install -r requirements.txt
 ```sh
 python download_clip_vit.py
 python download_ootd_models.py
+
+cd ~/OOTDiffusion/OOTDiffusion/checkpoints
+mv humanparsing/ ../../checkpoints/
+mv ootd/ ../../checkpoints/
+mv openpose ../../checkpoints/
 ```
 
 ## Inference
