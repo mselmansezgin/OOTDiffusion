@@ -22,20 +22,45 @@ Our model checkpoints trained on [VITON-HD](https://github.com/shadow2496/VITON-
 ![demo](images/demo.png)&nbsp;
 ![workflow](images/workflow.png)&nbsp;
 
+##Cuda installation
+```sh
+sudo apt update
+sudo apt upgrade
+sudo apt install ubuntu-drivers-common
+sudo ubuntu-drivers devices
+
+
+sudo apt install nvidia-driver-535
+nvidia-smi
+
+gcc -v
+nvcc -V
+apt install nvidia-cuda-toolkit
+
+nvcc -V
+```
+
 ## Installation
 1. Clone the repository
 
 ```sh
-git clone https://github.com/levihsu/OOTDiffusion
+git clone https://github.com/mselmansezgin/OOTDiffusion
 ```
 
 2. Create a conda environment and install the required packages
 
 ```sh
-conda create -n ootd python==3.10
-conda activate ootd
-pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2
+cd OOTDiffusion
+sudo apt install python3.10-venv
+python3 -m venv venv
+source ./venv/bin/activate
 pip install -r requirements.txt
+```
+
+3. Download model files from huggingface
+```sh
+python download_clip_vit.py
+python download_ootd_models.py
 ```
 
 ## Inference
